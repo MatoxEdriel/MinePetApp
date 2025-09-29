@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:minepet/src/widget/options.dart';
 
 class Myhomepage extends StatefulWidget {
   const Myhomepage({super.key});
@@ -13,7 +12,6 @@ class _MyhomePageState extends State<Myhomepage> {
 
   static final  List<Widget> _pages = <Widget>[
 
-    buttonStateLess(text: "Integrando widget con otro ", color: Colors.black),
 
 
     Center(child: Container(
@@ -39,10 +37,6 @@ class _MyhomePageState extends State<Myhomepage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    //Aqui entonces yo USO SCAFFOLD que es un tipo de widget pero con estilos por default una estructura
-    //basica que proporciona
-
     return Scaffold(
       appBar: AppBar(title: const Text("Primera prueba ")),
       body: _pages[_selectedOption],

@@ -1,20 +1,20 @@
-
 import 'package:flutter/material.dart';
-import 'package:minepet/src/widget/MyHomePage.dart';
+import 'package:minepet/src/pages/home_page.dart';
+import 'package:minepet/src/widget/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // aqui existe el splash-screen
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Uso de widget ',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-      ),
+      title: 'MinePet ',
+      home: const SplashScreen(),
+      routes: {
 
-      //Recuerda que home hace que sea el primer widget que se vea
-      home: const Myhomepage(),
+        '/home': (context) => const Myhomepage()
+      },
     );
   }
 }
