@@ -10,23 +10,19 @@ class Myhomepage extends StatefulWidget {
 class _MyhomePageState extends State<Myhomepage> {
   int _selectedOption = 0;
 
-  static final  List<Widget> _pages = <Widget>[
-
-
-
-    Center(child: Container(
-         margin: const EdgeInsets.all(10.0),
-    color: Colors.amber[600],
-    width: 48.0,
-    height: 48.0,
-
-
-    )),
+  static final List<Widget> _pages = <Widget>[
+    Center(
+      child: Container(
+        margin: const EdgeInsets.all(10.0),
+        color: Colors.amber[600],
+        width: 48.0,
+        height: 48.0,
+      ),
+    ),
     Center(child: Text("Home", style: TextStyle(fontSize: 30))),
     Center(child: Text("Configuration", style: TextStyle(fontSize: 30))),
 
-    Center(child: Text("yours pets", style: TextStyle(fontSize: 30)))
-
+    Center(child: Text("yours pets", style: TextStyle(fontSize: 30))),
   ];
 
   void _onItemTapped(int currentOption) {
@@ -38,7 +34,19 @@ class _MyhomePageState extends State<Myhomepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Primera prueba ")),
+      appBar: AppBar(
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset('assets/images/minePet.png', height: 30),
+            const SizedBox(width: 8),
+
+            const Text("MinePet"),
+          ],
+        ),
+        centerTitle: true,
+        
+      ),
       body: _pages[_selectedOption],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
