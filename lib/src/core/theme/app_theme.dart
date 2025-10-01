@@ -31,10 +31,11 @@ class AppTheme {
     ),
 
     textTheme: const TextTheme(
-
-      displayLarge: TextStyle(color: AppColors.darkMauve , fontWeight: FontWeight.bold),
-      bodyLarge: TextStyle(color: AppColors.darkMauve)
-
+      displayLarge: TextStyle(
+        color: AppColors.darkMauve,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyLarge: TextStyle(color: AppColors.darkMauve),
     ),
   );
 }
