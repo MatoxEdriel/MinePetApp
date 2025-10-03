@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minepet/src/core/theme/app_colors.dart';
+import 'package:minepet/src/pages/Care/calendar.dart';
 import 'package:minepet/src/pages/interfaces/interfaces.dart';
 import 'package:minepet/src/pages/profile_page.dart';
 
@@ -34,7 +35,7 @@ class _MyhomePageState extends State<Myhomepage> {
       ),
       Center(child: Text("Home", style: TextStyle(fontSize: 30))),
       Center(child: Text("Configuration", style: TextStyle(fontSize: 30))),
-      Center(child: Text("yours pets", style: TextStyle(fontSize: 30))),
+      Calendar(),
       ProfileScreen(user: user),
     ];
 
@@ -48,7 +49,7 @@ class _MyhomePageState extends State<Myhomepage> {
       body: Container(child: pages[_selectedOption]),
 
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppColors.pastelWhite,
+        backgroundColor: AppColors.pastelWhite, 
         type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.pastelPink,
         unselectedItemColor: Colors.grey,
@@ -60,8 +61,8 @@ class _MyhomePageState extends State<Myhomepage> {
           ),
           BottomNavigationBarItem(icon: Icon(Icons.pets), label: 'Mine Pets'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.article_outlined),
-            label: 'Your',
+            icon: Icon(Icons.dataset),
+            label: 'Care',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
