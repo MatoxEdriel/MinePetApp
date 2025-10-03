@@ -45,11 +45,50 @@ class _MyhomePageState extends State<Myhomepage> {
         actions: [IconButton(icon: const Icon(Icons.camera), onPressed: () {})],
       ),
 
-      drawer: Drawer(child: ListView(padding: EdgeInsets.zero)),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  const DrawerHeader(
+                    decoration: BoxDecoration(color: AppColors.pastelWhite),
+                    child: Text(
+                      "Main",
+                      style: TextStyle(color: Colors.black, fontSize: 24),
+                    ),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.home),
+                    title: const Text("From Start"),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                     leading: const Icon(Icons.settings),
+                    title: const Text('Configuración'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  )
+                ],
+              ),
+            ),
+            Padding(padding: const EdgeInsets.all(16.0),
+            child: Image.asset(
+              'assets/images/minePet.png',
+              height: 50,
+            ),),
+          ],
+        ),
+      ),
+
       body: Container(child: pages[_selectedOption]),
 
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppColors.pastelWhite, 
+        backgroundColor: AppColors.pastelWhite,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.pastelPink,
         unselectedItemColor: Colors.grey,
@@ -60,10 +99,7 @@ class _MyhomePageState extends State<Myhomepage> {
             label: 'Start',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.pets), label: 'Mine Pets'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dataset),
-            label: 'Care',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.dataset), label: 'Care'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
 
