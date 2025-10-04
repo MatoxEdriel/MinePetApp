@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minepet/src/core/theme/app_colors.dart';
-import 'package:minepet/src/pages/Care/calendar.dart';
+import 'package:minepet/src/pages/Care/layout_care.dart';
 import 'package:minepet/src/pages/interfaces/interfaces.dart';
 import 'package:minepet/src/pages/profile_page.dart';
 
@@ -35,7 +35,7 @@ class _MyhomePageState extends State<Myhomepage> {
       ),
       Center(child: Text("Home", style: TextStyle(fontSize: 30))),
       Center(child: Text("Configuration", style: TextStyle(fontSize: 30))),
-      Calendar(),
+      Layout(),
       ProfileScreen(user: user),
     ];
 
